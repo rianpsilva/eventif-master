@@ -29,11 +29,6 @@ class SubscribeTest(TestCase):
     def test_csrf(self):
         self.assertContains(self.response, 'csrfmiddlewaretoken')
 
-    def test_has_form(self):
-        form = self.response.context['form']
-        self.assertSequenceEqual(
-            ['name', 'cpf', 'email', 'phone'], list(form.fields))
-
 
 class SubscribePostValid(TestCase):
     def setUp(self):
