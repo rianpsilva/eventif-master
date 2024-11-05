@@ -1,4 +1,4 @@
-from subscriptions.forms import SubscriptionForm
+from subscriptions import subscription_form
 
 
 class SubscribeGet(TestCase):
