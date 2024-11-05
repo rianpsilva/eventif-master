@@ -1,5 +1,5 @@
 from django.test import TestCase
-from subscription_forms import SubscriptionForm
+from subscriptions import subscription_form
 
 
 class SubscriptionFormTest(TestCase):
