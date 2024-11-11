@@ -20,7 +20,7 @@ def create(request):
     if not form.is_valid():
         return render(request, 'subscriptions/subscription_form.html', {'form': form})
 
-        _send_mail(
+    _send_mail(
         'subscriptions/subscription_email.txt',
         form.cleaned_data,
         'Confirmação de inscrição!',
