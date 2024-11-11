@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from subscriptions.forms import SubscriptionForm
+from subscriptions.models import Subscription
 from django.core import mail
 from django.template.loader import render_to_string
 from django.contrib import messages
@@ -25,6 +26,8 @@ def create(request):
         'Confirmação de inscrição!',
         settings.DEFAULT_FROM_EMAIL,
         form.cleaned_data['email'])
+
+    Subscription.objects.create(**form.cleaned_data)
 
 
     messages.success(request, 'Inscrição realizada com sucesso!')
