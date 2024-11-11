@@ -8,3 +8,4 @@ static3==0.7.0
 typing_extensions==4.12.2
 gunicorn==23.0.0
 mysqlclient==2.2.4
+djanago-extensions=3.2.3
