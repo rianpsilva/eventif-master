@@ -7,5 +7,5 @@ class SubscriptionFormTest(TestCase):
         self.form = SubscriptionForm()
 
     def test_has_form(self):
-        expected = ['name','cpf','email','phone']
+        expected = ['name', 'cpf', 'email', 'phone']
         self.assertSequenceEqual(expected, list(self.form.fields))

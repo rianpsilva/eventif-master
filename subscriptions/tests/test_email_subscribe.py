@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.core import mail
 
+
 class SubscribePostValid(TestCase):
     def setUp(self):
         data = dict(name="Cleber Fonseca", cpf='12345678901',
@@ -21,12 +22,12 @@ class SubscribePostValid(TestCase):
         self.assertEqual(expect, self.email.to)
 
     def test_subscription_email_body(self):
-            contents = (
-                'Cleber Fonseca',
-                '12345678901',
-                'profcleberfonseca@gmail.com',
-                '53-12345-6789'
-            )
-            for content in contents:
-                with self.subTest():
-                    self.assertIn(content, self.email.body)
+        contents = (
+            'Cleber Fonseca',
+            '12345678901',
+            'profcleberfonseca@gmail.com',
+            '53-12345-6789'
+        )
+        for content in contents:
+            with self.subTest():
+                self.assertIn(content, self.email.body)
