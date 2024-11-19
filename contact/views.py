@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
+from django.core import mail
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
