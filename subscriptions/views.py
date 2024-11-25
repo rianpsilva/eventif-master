@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render
+from django.shortcuts import render, resolve_url as r
 from subscriptions.forms import SubscriptionForm
 from subscriptions.models import Subscription
 from django.core import mail
@@ -32,7 +32,7 @@ def create(request):
 
 
 
-    return HttpResponseRedirect('/inscricao/{}/'.format(subscription.pk))
+    return HttpResponseRedirect(r('subscriptions:detail',subscription.pk))
 
 
 def new(request):
